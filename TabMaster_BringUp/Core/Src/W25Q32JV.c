@@ -82,10 +82,10 @@ void fast_read(QSPI_HandleTypeDef *hqspi, uint8_t *buffer, uint32_t start_addr, 
 	FR.AlternateBytes = 0;
 	FR.AddressSize = QSPI_ADDRESS_24_BITS;
 	FR.AlternateBytesSize = QSPI_ALTERNATE_BYTES_8_BITS;
-	FR.DummyCycles = 8;
+	FR.DummyCycles = 0;
 	FR.InstructionMode = QSPI_INSTRUCTION_1_LINE;
 	FR.AddressMode = QSPI_ADDRESS_1_LINE;
-	FR.AlternateByteMode = QSPI_ALTERNATE_BYTES_NONE;
+	FR.AlternateByteMode = QSPI_ALTERNATE_BYTES_1_LINE;
 	FR.DataMode = QSPI_DATA_1_LINE;
 	FR.NbData = data_len;
 	FR.DdrMode = QSPI_DDR_MODE_DISABLE;

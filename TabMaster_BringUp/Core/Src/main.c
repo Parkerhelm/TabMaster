@@ -91,9 +91,21 @@ int main(void)
   MX_QUADSPI_Init();
   /* USER CODE BEGIN 2 */
 
-  uint8_t dev_ID[2] = {0};
+  uint8_t data[2] = {0};
+  uint8_t read[2] = {0};
 
-  device_ID(&hqspi, dev_ID);
+  data[0] = 0x56;
+  data[1] = 0x1f;
+
+  write_enable(&hqspi);
+
+  HAL_Delay(5);
+
+  page_program(&hqspi, data, 0, 2);
+
+  HAL_Delay(5);
+
+  fast_read(&hqspi, read, 0, 2);
 
 
   /* USER CODE END 2 */
