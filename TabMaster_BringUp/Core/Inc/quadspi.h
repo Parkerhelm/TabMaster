@@ -48,14 +48,14 @@ void MX_QUADSPI_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
-/*MX25L512 memory parameters*/
-#define MEMORY_FLASH_SIZE				0x400000 /* 512 MBits => 64MBytes */
-#define MEMORY_BLOCK_SIZE				0x10000   /* 1024 sectors of 64KBytes */
-#define MEMORY_SECTOR_SIZE				0x1000    /* 16384 subsectors of 4kBytes */
-#define MEMORY_PAGE_SIZE				0x100     /* 262144 pages of 256 bytes */
+/*W25Q32JV memory parameters*/
+#define MEMORY_FLASH_SIZE				0x400000 /* 32 MBits => 4MBytes */
+#define MEMORY_BLOCK_SIZE				0x10000   /* 64 sectors of 64KBytes */
+#define MEMORY_SECTOR_SIZE				0x1000    /* 1024 subsectors of 4kBytes */
+#define MEMORY_PAGE_SIZE				0x100     /* 16384 pages of 256 bytes */
 
 
-/*MX25L512 commands */
+/*W25Q32JV commands */
 #define WRITE_ENABLE_CMD 0x06
 #define READ_STATUS_REG_CMD 0x05
 #define WRITE_STATUS_REG_CMD 0x01
