@@ -18,16 +18,12 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ltdc.h"
 #include "quadspi.h"
 #include "gpio.h"
-#include "fmc.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "W25Q32JV.h"
-#include "IS42S16400J-6TLI.h"
-#include "Test_Image.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,8 +88,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_QUADSPI_Init();
-  MX_FMC_Init();
-  MX_LTDC_Init();
   /* USER CODE BEGIN 2 */
 
   FMC_Init(&hsdram1);
