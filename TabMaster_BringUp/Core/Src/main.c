@@ -38,9 +38,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-#define red 0xF800
-#define green 0x07E0
-#define blue 0x001F
+
 
 
 /* USER CODE END PD */
@@ -53,7 +51,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+volatile uint16_t curr_color = 0xFFFF;
+volatile uint32_t frame_cnt = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,13 +107,11 @@ int main(void)
 
   init_frame_buff();
 
+  HAL_LTDC_ProgramLineEvent(&hltdc, 480);
+
   __HAL_LTDC_ENABLE(&hltdc);
 
   HAL_GPIO_WritePin(LCD_BCKLT_EN_GPIO_Port, LCD_BCKLT_EN_Pin, GPIO_PIN_SET);
-
-  HAL_Delay(1000);
-
-  HAL_LTDC_ProgramLineEvent(&hltdc, 50);
 
   /* USER CODE END 2 */
 
@@ -123,23 +120,7 @@ int main(void)
   while (1)
   {
 
-	  while(__HAL_LTDC_GET_FLAG(&hltdc, LTDC_ISR_LIF) != 1){}
-	  __HAL_LTDC_CLEAR_FLAG(&hltdc, LTDC_ISR_LIF);
-	  update_frame_buff(red);
-	  if(__HAL_LTDC_GET_FLAG(&hltdc, LTDC_ISR_LIF) == 1){
-		  while(1){}
-	  }
-	  HAL_Delay(1000);
 
-	  while(__HAL_LTDC_GET_FLAG(&hltdc, LTDC_ISR_LIF) != 1){}
-	  __HAL_LTDC_CLEAR_FLAG(&hltdc, LTDC_ISR_LIF);
-	  update_frame_buff(green);
-	  HAL_Delay(1000);
-
-	  while(__HAL_LTDC_GET_FLAG(&hltdc, LTDC_ISR_LIF) != 1){}
-	  __HAL_LTDC_CLEAR_FLAG(&hltdc, LTDC_ISR_LIF);
-	  update_frame_buff(blue);
-	  HAL_Delay(1000);
 
     /* USER CODE END WHILE */
 

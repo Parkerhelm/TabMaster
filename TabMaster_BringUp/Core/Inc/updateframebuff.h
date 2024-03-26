@@ -12,6 +12,13 @@
 
 #define PIXELCNT 384000
 
+#define red 0xF800
+#define green 0x07E0
+#define blue 0x001F
+#define cyan 0x07ff
+#define majenta 0x690c
+#define	orange 0xebc1
+
 void update_frame_buff(uint16_t color);
 void init_frame_buff(void);
 
