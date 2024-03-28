@@ -29,6 +29,7 @@
 #include "W25Q32JV.h"
 #include "IS42S16400J-6TLI.h"
 #include "Test_Image.h"
+#include "GT911.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,11 +99,13 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   FMC_Init(&hsdram1);
+  GT911_INIT();
 
-  HAL_Delay(250);
+  uint8_t REG_ADD[2] = {0};
+  REG_ADD[0] = 0x81;
+  REG_ADD[1] = 0x4E;
 
-  HAL_GPIO_WritePin(LCD_BCKLT_EN_GPIO_Port, LCD_BCKLT_EN_Pin, GPIO_PIN_SET);
-
+  uint8_t DEV_ID[2] = {0};
 
 
 
@@ -112,6 +115,16 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if (GT911_I2C_Write( GT911_ADRESS, REG_ADD, sizeof(REG_ADD)) != GT911_OK){
+		  while(1){}
+	  }
+
+	  if (GT911_I2C_Read(GT911_ADRESS, DEV_ID, sizeof(DEV_ID)) != GT911_OK){
+		  while(1){}
+	  }
+
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

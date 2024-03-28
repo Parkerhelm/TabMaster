@@ -61,6 +61,12 @@ void Error_Handler(void);
 #define DISP_EN_GPIO_Port GPIOC
 #define LCD_BCKLT_EN_Pin GPIO_PIN_12
 #define LCD_BCKLT_EN_GPIO_Port GPIOH
+#define LCD_TOUCH_RST_Pin GPIO_PIN_3
+#define LCD_TOUCH_RST_GPIO_Port GPIOB
+#define LCD_TOUCH_WAKE_Pin GPIO_PIN_4
+#define LCD_TOUCH_WAKE_GPIO_Port GPIOB
+#define LCD_TOUCH_INT_Pin GPIO_PIN_5
+#define LCD_TOUCH_INT_GPIO_Port GPIOB
 #define MCU_LED_Pin GPIO_PIN_7
 #define MCU_LED_GPIO_Port GPIOI
 
