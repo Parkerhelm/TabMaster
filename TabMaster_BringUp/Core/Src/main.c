@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "i2c.h"
 #include "ltdc.h"
 #include "quadspi.h"
 #include "gpio.h"
@@ -93,6 +94,7 @@ int main(void)
   MX_QUADSPI_Init();
   MX_FMC_Init();
   MX_LTDC_Init();
+  MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
 
   FMC_Init(&hsdram1);
