@@ -16,6 +16,7 @@ typedef enum{
 
 #define GT911_ADRESS 0x5D
 
+
 void GT911_INIT(void);
 void Set_GT911_INT_Output(void);
 void Set_GT911_INT_Input(void);
