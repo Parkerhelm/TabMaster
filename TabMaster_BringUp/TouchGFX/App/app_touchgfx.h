@@ -1,8 +1,10 @@
-/* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    stm32f7xx_it.h
-  * @brief   This file contains the headers of the interrupt handlers.
+  * File Name          : app_touchgfx.h
+  ******************************************************************************
+  * This file was created by TouchGFX Generator 4.22.1. This file is only
+  * generated once! Delete this file from your project and re-generate code
+  * using STM32CubeMX or change this file manually to update it.
   ******************************************************************************
   * @attention
   *
@@ -13,22 +15,17 @@
   * in the root directory of this software component.
   * If no LICENSE file comes with this software, it is provided AS-IS.
   *
- ******************************************************************************
+  ******************************************************************************
   */
-/* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F7xx_IT_H
-#define __STM32F7xx_IT_H
-
+#ifndef APP_TOUCHGFX_H
+#define APP_TOUCHGFX_H
 #ifdef __cplusplus
  extern "C" {
 #endif
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
+/* Includes ------------------------------------------------------------------*/
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
@@ -46,14 +43,11 @@
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
-void NMI_Handler(void);
-void HardFault_Handler(void);
-void MemManage_Handler(void);
-void BusFault_Handler(void);
-void UsageFault_Handler(void);
-void DebugMon_Handler(void);
-void TIM6_DAC_IRQHandler(void);
-void DMA2D_IRQHandler(void);
+void MX_TouchGFX_PreOSInit(void);
+void MX_TouchGFX_Init(void);
+void MX_TouchGFX_Process(void);
+void TouchGFX_Task(void *argument);
+
 /* USER CODE BEGIN EFP */
 
 /* USER CODE END EFP */
@@ -61,5 +55,6 @@ void DMA2D_IRQHandler(void);
 #ifdef __cplusplus
 }
 #endif
+#endif /* APP_TOUCHGFX_H */
 
-#endif /* __STM32F7xx_IT_H */
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

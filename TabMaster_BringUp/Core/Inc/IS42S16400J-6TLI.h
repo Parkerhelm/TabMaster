@@ -8,7 +8,7 @@
 #ifndef SRC_IS42S16400J_6TLI_H_
 #define SRC_IS42S16400J_6TLI_H_
 
-#define SDRAM_Start 0xC0000000
+#define SDRAM_Start 0xD0000000
 #define SDRAM_Len 8000000
 
 void FMC_Init(SDRAM_HandleTypeDef* hsdram1);
