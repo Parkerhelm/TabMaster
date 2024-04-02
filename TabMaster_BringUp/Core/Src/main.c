@@ -105,11 +105,6 @@ int main(void)
   MX_TouchGFX_PreOSInit();
   /* USER CODE BEGIN 2 */
 
-  FMC_Init(&hsdram1);
-
-
-
-
   /* USER CODE END 2 */
 
   /* Init scheduler */

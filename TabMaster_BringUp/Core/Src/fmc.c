@@ -22,7 +22,7 @@
 #include "fmc.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "IS42S16400J-6TLI.h"
 /* USER CODE END 0 */
 
 SDRAM_HandleTypeDef hsdram1;
@@ -69,7 +69,7 @@ void MX_FMC_Init(void)
   }
 
   /* USER CODE BEGIN FMC_Init 2 */
-
+  FMC_Init(&hsdram1);
   /* USER CODE END FMC_Init 2 */
 }
 
