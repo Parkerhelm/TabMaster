@@ -54,8 +54,13 @@ void MX_QUADSPI_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN QUADSPI_Init 2 */
-  CSP_QUADSPI_Init();
-  CSP_QSPI_EnableMemoryMappedMode();
+  if(CSP_QUADSPI_Init() != HAL_OK) {
+	  while(1){}
+  }
+
+  if (CSP_QSPI_EnableMemoryMappedMode() != HAL_OK){
+	  while(1){}
+  }
 
   MPU_Region_InitTypeDef MPU_InitStruct = {0};
 
@@ -80,9 +85,17 @@ void MX_QUADSPI_Init(void)
 
    /** Initializes and configures the Region and the memory to be protected
    */
+   MPU_InitStruct.Enable = MPU_REGION_ENABLE;
    MPU_InitStruct.Number = MPU_REGION_NUMBER1;
+   MPU_InitStruct.BaseAddress = 0x90000000;
    MPU_InitStruct.Size = MPU_REGION_SIZE_4MB;
-   MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
+   MPU_InitStruct.SubRegionDisable = 0x0;
+   MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+   MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+   MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
+   MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+   MPU_InitStruct.IsCacheable = MPU_ACCESS_NOT_CACHEABLE;
+   MPU_InitStruct.IsBufferable = MPU_ACCESS_NOT_BUFFERABLE;
 
    HAL_MPU_ConfigRegion(&MPU_InitStruct);
    /* Enables the MPU */
@@ -190,6 +203,22 @@ uint8_t CSP_QUADSPI_Init(void) {
 	}
 
 	//MX_QUADSPI_Init();
+
+	  hqspi.Instance = QUADSPI;
+	  hqspi.Init.ClockPrescaler = 1;
+	  hqspi.Init.FifoThreshold = 15;
+	  hqspi.Init.SampleShifting = QSPI_SAMPLE_SHIFTING_NONE;
+	  hqspi.Init.FlashSize = 21;
+	  hqspi.Init.ChipSelectHighTime = QSPI_CS_HIGH_TIME_3_CYCLE;
+	  hqspi.Init.ClockMode = QSPI_CLOCK_MODE_0;
+	  hqspi.Init.FlashID = QSPI_FLASH_ID_1;
+	  hqspi.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
+	  if (HAL_QSPI_Init(&hqspi) != HAL_OK)
+	  {
+	    Error_Handler();
+	  }
+
+
 
 	if (QSPI_ResetChip() != HAL_OK) {
 		return HAL_ERROR;
