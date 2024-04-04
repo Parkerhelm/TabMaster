@@ -29,9 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "W25Q32JV.h"
-#include "IS42S16400J-6TLI.h"
-#include "Test_Image.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
