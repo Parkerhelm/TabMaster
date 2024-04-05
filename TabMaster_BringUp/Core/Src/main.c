@@ -21,6 +21,7 @@
 #include "cmsis_os.h"
 #include "crc.h"
 #include "dma2d.h"
+#include "i2c.h"
 #include "ltdc.h"
 #include "quadspi.h"
 #include "gpio.h"
@@ -98,6 +99,7 @@ int main(void)
   MX_LTDC_Init();
   MX_CRC_Init();
   MX_DMA2D_Init();
+  MX_I2C1_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
