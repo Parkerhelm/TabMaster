@@ -38,7 +38,7 @@ void screen1ViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     {
         //Interaction1
         //When button1 clicked change screen to Screen2
-        //Go to Screen2 with screen transition towards East
-        application().gotoScreen2ScreenSlideTransitionEast();
+        //Go to Screen2 with no screen transition
+        application().gotoScreen2ScreenNoTransition();
     }
 }

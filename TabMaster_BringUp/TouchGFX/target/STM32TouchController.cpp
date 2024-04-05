@@ -70,7 +70,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 		while(1){}
 	}
 
-	if ((SREG & 0x80) == 0){
+	if ((SREG && 0x80) == 0){
 		return false;
 	}
 
@@ -91,8 +91,8 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 
 	GT911_I2C_Write(GT911_ADDRESS, SREG_RST, sizeof(SREG_RST)); //reset SREG
 
-	x = (((uint32_t) COOR_BUFF[1]) << 8) & ((uint32_t)COOR_BUFF[0]);
-	y = (((uint32_t) COOR_BUFF[3]) << 8) & ((uint32_t)COOR_BUFF[2]); // return coords
+	x = (((uint32_t) COOR_BUFF[1]) << 8) | ((uint32_t)COOR_BUFF[0]);
+	y = (((uint32_t) COOR_BUFF[3]) << 8) | ((uint32_t)COOR_BUFF[2]); // return coords
 
     return true;
 }
