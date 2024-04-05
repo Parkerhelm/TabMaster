@@ -60,8 +60,8 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 	//Check SR
 	static uint8_t REG_ADD[2] = {0};
 	uint8_t SREG = 0;
-	REG_ADD[0] = (uint8_t) (GT911_SR_ADDRESS >> 8);
-	REG_ADD[1] = (uint8_t) (GT911_SR_ADDRESS & 0x00FF);
+	REG_ADD[0] = 0x81;
+	REG_ADD[1] = 0x4E;
 
 	if (GT911_I2C_Write(GT911_ADDRESS, REG_ADD, sizeof(REG_ADD)) != GT911_OK){
 		while(1){}
@@ -77,16 +77,16 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 	//Read coordinates if needed
 	uint8_t COOR_BUFF[4] = {0};
 
-	REG_ADD[0] = (uint8_t) GT911_XCOOR_LB_ADDRESS >> 8;
-	REG_ADD[1] = (uint8_t) GT911_XCOOR_LB_ADDRESS & 0x00FF; //set address
+	REG_ADD[0] = 0x81;
+	REG_ADD[1] = 0x50;//set address
 
 	GT911_I2C_Write(GT911_ADDRESS, REG_ADD, sizeof(REG_ADD));
 	GT911_I2C_Read(GT911_ADDRESS, COOR_BUFF, sizeof(COOR_BUFF)); //read coords
 																//coordinate bytes are stored in 4 consecutive addresses
 																//x low byte, x high byte, y low byte, y high byte
 	uint8_t SREG_RST[3] = {0};
-	SREG_RST[0] = (uint8_t) (GT911_SR_ADDRESS >> 8);
-	SREG_RST[1] = (uint8_t) (GT911_SR_ADDRESS & 0x00FF);
+	SREG_RST[0] = 0x81;
+	SREG_RST[1] = 0x4E;
 	SREG_RST[2] = 0;
 
 	GT911_I2C_Write(GT911_ADDRESS, SREG_RST, sizeof(SREG_RST)); //reset SREG
@@ -94,7 +94,7 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 	x = (((uint32_t) COOR_BUFF[1]) << 8) & ((uint32_t)COOR_BUFF[0]);
 	y = (((uint32_t) COOR_BUFF[3]) << 8) & ((uint32_t)COOR_BUFF[2]); // return coords
 
-    return false;
+    return true;
 }
 
 /* USER CODE END STM32TouchController */

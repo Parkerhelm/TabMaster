@@ -21,7 +21,7 @@
 #include "i2c.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "GT911.h"
 /* USER CODE END 0 */
 
 I2C_HandleTypeDef hi2c1;
@@ -65,7 +65,7 @@ void MX_I2C1_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN I2C1_Init 2 */
-
+  GT911_INIT();
   /* USER CODE END I2C1_Init 2 */
 
 }
