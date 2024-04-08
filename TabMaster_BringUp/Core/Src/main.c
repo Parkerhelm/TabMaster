@@ -97,8 +97,6 @@ int main(void)
 
   FMC_Init(&hsdram1);
 
-  HAL_Delay(250);
-
   HAL_GPIO_WritePin(LCD_BCKLT_EN_GPIO_Port, LCD_BCKLT_EN_Pin, GPIO_PIN_SET);
 
 
