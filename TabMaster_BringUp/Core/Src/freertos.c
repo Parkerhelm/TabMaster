@@ -46,7 +46,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
-uint16_t to_count = 0;
+volatile uint16_t to_count = 0;
 
 
 

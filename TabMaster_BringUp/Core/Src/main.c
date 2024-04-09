@@ -24,6 +24,7 @@
 #include "i2c.h"
 #include "ltdc.h"
 #include "quadspi.h"
+#include "tim.h"
 #include "gpio.h"
 #include "fmc.h"
 #include "app_touchgfx.h"
@@ -100,6 +101,7 @@ int main(void)
   MX_CRC_Init();
   MX_DMA2D_Init();
   MX_I2C1_Init();
+  MX_TIM5_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
