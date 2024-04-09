@@ -103,7 +103,7 @@ void MainViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
         //Change_to_CS
         //When Start_Button clicked change screen to Counting
         //Go to Counting with no screen transition
-        application().gotoCountingScreenNoTransition();
+        application().gotoCountingScreenNoTransition();
         //start_counting
         //When Start_Button clicked call virtual function
         //Call start_btn_vf

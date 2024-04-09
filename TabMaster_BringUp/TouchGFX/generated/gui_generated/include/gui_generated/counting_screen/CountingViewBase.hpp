@@ -20,11 +20,16 @@ public:
     CountingViewBase();
     virtual ~CountingViewBase();
     virtual void setupScreen();
+    virtual void transitionBegins();
 
     /*
      * Virtual Action Handlers
      */
     virtual void stop_count_btn_vf()
+    {
+        // Override and implement this function in Counting
+    }
+    virtual void update_max_cnt_vf()
     {
         // Override and implement this function in Counting
     }

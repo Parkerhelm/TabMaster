@@ -1,5 +1,6 @@
 #include <gui/main_screen/MainView.hpp>
 #include <stdlib.h>
+#include <gui/counting_screen/CountingView.hpp>
 
 extern "C"{
 #include "btn_callbacks.h"
@@ -51,6 +52,10 @@ void MainView::reset_btn_vf(){
     Count.resizeToCurrentText();
     Background.invalidateContent();
     Count.invalidate();
+}
+
+void MainView::start_btn_vf(){
+	start_btn_callback();
 }
 
 

@@ -16,6 +16,7 @@ public:
     virtual void p10_btn_vf();
     virtual void p1_btn_vf();
     virtual void reset_btn_vf();
+    virtual void start_btn_vf();
 
 
 protected:

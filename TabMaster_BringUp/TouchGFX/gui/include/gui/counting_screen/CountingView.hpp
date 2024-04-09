@@ -11,6 +11,10 @@ public:
     virtual ~CountingView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+
+    virtual void update_max_cnt_vf();
+    virtual void stop_count_btn_vf();
+
 protected:
 };
 

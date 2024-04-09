@@ -60,7 +60,7 @@ CountingViewBase::~CountingViewBase()
 
 void CountingViewBase::setupScreen()
 {
-
+    transitionBegins();
 }
 
 void CountingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -70,10 +70,18 @@ void CountingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //change_to_ms
         //When Stop_Counting_Button clicked change screen to Main
         //Go to Main with no screen transition
-        application().gotoMainScreenNoTransition();
+        application().gotoMainScreenNoTransition();
         //stop_count
         //When Stop_Counting_Button clicked call virtual function
         //Call stop_count_btn_vf
         stop_count_btn_vf();
     }
+}
+
+void CountingViewBase::transitionBegins()
+{
+    //max_count_update
+    //When screen transition begins call virtual function
+    //Call update_max_cnt_vf
+    update_max_cnt_vf();
 }

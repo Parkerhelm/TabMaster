@@ -263,7 +263,7 @@
             "X": 366,
             "Y": 240,
             "Width": 68,
-            "Height": 49,
+            "Height": 47,
             "TextId": "__SingleUse_4ZXT",
             "TextRotation": "0",
             "Color": {
@@ -300,7 +300,7 @@
             "X": 230,
             "Y": 370,
             "Width": 341,
-            "Height": 49,
+            "Height": 47,
             "TextId": "__SingleUse_OD8M",
             "TextRotation": "0",
             "Color": {
@@ -360,6 +360,16 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "stop_count_btn_vf"
+            }
+          },
+          {
+            "InteractionName": "max_count_update",
+            "Trigger": {
+              "Type": "TriggerScreenTransitionBegins"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "update_max_cnt_vf"
             }
           }
         ]
