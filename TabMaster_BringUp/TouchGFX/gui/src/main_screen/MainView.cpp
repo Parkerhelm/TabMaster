@@ -1,0 +1,80 @@
+#include <gui/main_screen/MainView.hpp>
+#include <stdlib.h>
+
+extern "C"{
+#include "btn_callbacks.h"
+}
+
+
+MainView::MainView()
+{
+
+}
+
+void MainView::setupScreen()
+{
+    MainViewBase::setupScreen();
+}
+
+void MainView::tearDownScreen()
+{
+    MainViewBase::tearDownScreen();
+}
+
+void MainView::p50_btn_vf(){
+	p50_btn_callback();
+    Unicode::snprintf(CountBuffer, COUNT_SIZE, "%d", to_count);
+    Count.resizeToCurrentText();
+    Background.invalidateContent();
+    Count.invalidate();
+}
+
+void MainView::p10_btn_vf(){
+	p10_btn_callback();
+    Unicode::snprintf(CountBuffer, COUNT_SIZE, "%d", to_count);
+    Count.resizeToCurrentText();
+    Background.invalidateContent();
+    Count.invalidate();
+}
+
+void MainView::p1_btn_vf(){
+	p1_btn_callback();
+    Unicode::snprintf(CountBuffer, COUNT_SIZE, "%d", to_count);
+    Count.resizeToCurrentText();
+    Background.invalidateContent();
+    Count.invalidate();
+}
+
+void MainView::reset_btn_vf(){
+	reset_btn_callback();
+    Unicode::snprintf(CountBuffer, COUNT_SIZE, "%d", to_count);
+    Count.resizeToCurrentText();
+    Background.invalidateContent();
+    Count.invalidate();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

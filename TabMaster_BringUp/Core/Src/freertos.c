@@ -46,6 +46,10 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 
+uint16_t to_count = 0;
+
+
+
 /* USER CODE END Variables */
 /* Definitions for HardwareTask */
 osThreadId_t HardwareTaskHandle;

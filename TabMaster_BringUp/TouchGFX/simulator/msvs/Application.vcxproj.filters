@@ -172,41 +172,41 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>866E7E98-A261-1BBE-FC22-38AC4D1404B9</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\startup_screen_screen">
-      <UniqueIdentifier>51154868-DEFC-DA95-BB2B-FA31A5968EAE</UniqueIdentifier>
+    <Filter Include="Source Files\gui\startup_screen">
+      <UniqueIdentifier>E40AA609-6D65-9F5E-ACBC-9DC9A563F0DF</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\main_screen_screen">
-      <UniqueIdentifier>8386973B-7900-87D2-3DF6-58CDCCD3525E</UniqueIdentifier>
+    <Filter Include="Header Files\gui\main_screen">
+      <UniqueIdentifier>AD7FDAEF-0B4D-8283-0DBE-70879968B4DE</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\counting_screen_screen">
-      <UniqueIdentifier>A2FF5079-EEF8-FE14-D475-05C71158B820</UniqueIdentifier>
+    <Filter Include="Header Files\gui\counting_screen">
+      <UniqueIdentifier>750DC2DE-2AC5-833D-6E04-CF9E2459C2BC</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\gui\startup_screen_screen">
-      <UniqueIdentifier>B56C0B6A-E114-C6DB-1ADD-4DE2F9531431</UniqueIdentifier>
+    <Filter Include="Header Files\gui\startup_screen">
+      <UniqueIdentifier>B529633D-87F7-D7FB-9F4A-AAD7BE899642</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\main_screen_screen">
-      <UniqueIdentifier>EB0D6115-7D89-AA7C-6B68-9ED283BA4616</UniqueIdentifier>
+    <Filter Include="Source Files\gui\main_screen">
+      <UniqueIdentifier>B9BAB470-2B3C-0DA0-D037-052C2020DB46</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\gui\counting_screen_screen">
-      <UniqueIdentifier>7EECA285-2F36-14BB-B6D7-0FFCB40164B8</UniqueIdentifier>
+    <Filter Include="Source Files\gui\counting_screen">
+      <UniqueIdentifier>1E326CDF-2C13-C265-FDB6-A98342286CD8</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\counting_screen_screen">
-      <UniqueIdentifier>26D639F2-644D-6AE4-3F0A-F87A02E164CC</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated\counting_screen">
+      <UniqueIdentifier>40F15984-44E0-ACCD-08AF-FE499B307D47</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\counting_screen_screen">
-      <UniqueIdentifier>8DF4BE30-9E89-9EF0-FEE8-3D3D6268DCBA</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated\counting_screen">
+      <UniqueIdentifier>B5499DBF-EBE7-BCDA-EAE6-690271D3CC78</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\main_screen_screen">
-      <UniqueIdentifier>06A235C6-B964-C0EC-BD65-627B34BADF9B</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated\main_screen">
+      <UniqueIdentifier>6B513FA0-34AF-866C-83EC-C13A1D4E03CD</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\main_screen_screen">
-      <UniqueIdentifier>3639DBE4-6D4D-5C72-9B7C-EDFCE09328D7</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated\main_screen">
+      <UniqueIdentifier>B2522558-4253-6ACA-717F-D3F708C4FB03</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\generated\gui_generated\startup_screen_screen">
-      <UniqueIdentifier>2DD9BD0E-209A-89F4-DED3-24A34260AF77</UniqueIdentifier>
+    <Filter Include="Header Files\generated\gui_generated\startup_screen">
+      <UniqueIdentifier>3504E2C3-BE5F-EEC4-1DAF-FF9EC409BAF3</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\generated\gui_generated\startup_screen_screen">
-      <UniqueIdentifier>406B99E9-0615-BA35-FE55-5478155D8AE9</UniqueIdentifier>
+    <Filter Include="Source Files\generated\gui_generated\startup_screen">
+      <UniqueIdentifier>70A818C1-99C6-2CA7-F5AC-E0318C509E00</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -240,32 +240,32 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp">
       <Filter>Source Files\generated\simulator\video</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\counting_screen_screen\Counting_ScreenPresenter.cpp">
-      <Filter>Source Files\gui\counting_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\counting_screen\CountingPresenter.cpp">
+      <Filter>Source Files\gui\counting_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\counting_screen_screen\Counting_ScreenView.cpp">
-      <Filter>Source Files\gui\counting_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\counting_screen\CountingView.cpp">
+      <Filter>Source Files\gui\counting_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\counting_screen_screen\Counting_ScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\counting_screen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\counting_screen\CountingViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\counting_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenPresenter.cpp">
-      <Filter>Source Files\gui\main_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\main_screen\MainPresenter.cpp">
+      <Filter>Source Files\gui\main_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenView.cpp">
-      <Filter>Source Files\gui\main_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\main_screen\MainView.cpp">
+      <Filter>Source Files\gui\main_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\main_screen_screen\Main_ScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\main_screen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\main_screen\MainViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\main_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\startup_screen_screen\Startup_ScreenPresenter.cpp">
-      <Filter>Source Files\gui\startup_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\startup_screen\StartupPresenter.cpp">
+      <Filter>Source Files\gui\startup_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\gui\src\startup_screen_screen\Startup_ScreenView.cpp">
-      <Filter>Source Files\gui\startup_screen_screen</Filter>
+    <ClCompile Include="..\..\gui\src\startup_screen\StartupView.cpp">
+      <Filter>Source Files\gui\startup_screen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\generated\gui_generated\src\startup_screen_screen\Startup_ScreenViewBase.cpp">
-      <Filter>Source Files\generated\gui_generated\startup_screen_screen</Filter>
+    <ClCompile Include="..\..\generated\gui_generated\src\startup_screen\StartupViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\startup_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -709,32 +709,32 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp">
       <Filter>Header Files\generated\simulator\include\simulator\video</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\counting_screen_screen\Counting_ScreenPresenter.hpp">
-      <Filter>Header Files\gui\counting_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\counting_screen\CountingPresenter.hpp">
+      <Filter>Header Files\gui\counting_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\counting_screen_screen\Counting_ScreenView.hpp">
-      <Filter>Header Files\gui\counting_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\counting_screen\CountingView.hpp">
+      <Filter>Header Files\gui\counting_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\counting_screen_screen\Counting_ScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\counting_screen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\counting_screen\CountingViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\counting_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenPresenter.hpp">
-      <Filter>Header Files\gui\main_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\main_screen\MainPresenter.hpp">
+      <Filter>Header Files\gui\main_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenView.hpp">
-      <Filter>Header Files\gui\main_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\main_screen\MainView.hpp">
+      <Filter>Header Files\gui\main_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen_screen\Main_ScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\main_screen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen\MainViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\main_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\startup_screen_screen\Startup_ScreenPresenter.hpp">
-      <Filter>Header Files\gui\startup_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\startup_screen\StartupPresenter.hpp">
+      <Filter>Header Files\gui\startup_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\gui\include\gui\startup_screen_screen\Startup_ScreenView.hpp">
-      <Filter>Header Files\gui\startup_screen_screen</Filter>
+    <ClInclude Include="..\..\gui\include\gui\startup_screen\StartupView.hpp">
+      <Filter>Header Files\gui\startup_screen</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startup_screen_screen\Startup_ScreenViewBase.hpp">
-      <Filter>Header Files\generated\gui_generated\startup_screen_screen</Filter>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startup_screen\StartupViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\startup_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

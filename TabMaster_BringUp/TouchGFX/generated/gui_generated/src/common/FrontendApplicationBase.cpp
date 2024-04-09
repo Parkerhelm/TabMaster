@@ -9,12 +9,12 @@
 #include <touchgfx/Texts.hpp>
 #include <touchgfx/hal/HAL.hpp>
 #include <platform/driver/lcd/LCD16bpp.hpp>
-#include <gui/main_screen_screen/Main_ScreenView.hpp>
-#include <gui/main_screen_screen/Main_ScreenPresenter.hpp>
-#include <gui/counting_screen_screen/Counting_ScreenView.hpp>
-#include <gui/counting_screen_screen/Counting_ScreenPresenter.hpp>
-#include <gui/startup_screen_screen/Startup_ScreenView.hpp>
-#include <gui/startup_screen_screen/Startup_ScreenPresenter.hpp>
+#include <gui/main_screen/MainView.hpp>
+#include <gui/main_screen/MainPresenter.hpp>
+#include <gui/counting_screen/CountingView.hpp>
+#include <gui/counting_screen/CountingPresenter.hpp>
+#include <gui/startup_screen/StartupView.hpp>
+#include <gui/startup_screen/StartupPresenter.hpp>
 
 using namespace touchgfx;
 
@@ -34,41 +34,41 @@ FrontendApplicationBase::FrontendApplicationBase(Model& m, FrontendHeap& heap)
  * Screen Transition Declarations
  */
 
-// Main_Screen
+// Main
 
-void FrontendApplicationBase::gotoMain_ScreenScreenNoTransition()
+void FrontendApplicationBase::gotoMainScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMain_ScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoMainScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoMain_ScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoMainScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<Main_ScreenView, Main_ScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<MainView, MainPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Counting_Screen
+// Counting
 
-void FrontendApplicationBase::gotoCounting_ScreenScreenNoTransition()
+void FrontendApplicationBase::gotoCountingScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoCounting_ScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoCountingScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoCounting_ScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoCountingScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<Counting_ScreenView, Counting_ScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<CountingView, CountingPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
 
-// Startup_Screen
+// Startup
 
-void FrontendApplicationBase::gotoStartup_ScreenScreenNoTransition()
+void FrontendApplicationBase::gotoStartupScreenNoTransition()
 {
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoStartup_ScreenScreenNoTransitionImpl);
+    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotoStartupScreenNoTransitionImpl);
     pendingScreenTransitionCallback = &transitionCallback;
 }
 
-void FrontendApplicationBase::gotoStartup_ScreenScreenNoTransitionImpl()
+void FrontendApplicationBase::gotoStartupScreenNoTransitionImpl()
 {
-    touchgfx::makeTransition<Startup_ScreenView, Startup_ScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
+    touchgfx::makeTransition<StartupView, StartupPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }

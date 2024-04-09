@@ -6,14 +6,23 @@
   <Texts>
     <TextGroup Id="Group1" />
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_B67H" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_J04Q" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
+      <Text Id="__SingleUse_CK83" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB">0</Translation>
+      </Text>
       <Text Id="__SingleUse_FWUT" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Touch to Continue</Translation>
       </Text>
       <Text Id="__SingleUse_OD8M" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">STOP COUNTING</Translation>
       </Text>
-      <Text Id="__SingleUse_4ZXT" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">50/100</Translation>
+      <Text Id="__SingleUse_4ZXT" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">&lt;value&gt;/&lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_E70N" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Reset</Translation>
@@ -21,8 +30,8 @@
       <Text Id="__SingleUse_P6ZH" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">Start</Translation>
       </Text>
-      <Text Id="__SingleUse_OVJX" Alignment="Left" TypographyId="Default">
-        <Translation Language="GB">Count: 100</Translation>
+      <Text Id="__SingleUse_OVJX" Alignment="Center" TypographyId="Default">
+        <Translation Language="GB">Count: &lt;value&gt;</Translation>
       </Text>
       <Text Id="__SingleUse_CM2Y" Alignment="Left" TypographyId="Default">
         <Translation Language="GB">+1</Translation>
@@ -36,7 +45,7 @@
     </TextGroup>
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Default" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0-9" WildcardCharacterRanges="0-9" />
     <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Typography_00" Font="verdana.ttf" Size="20" Bpp="4" Direction="LTR" FallbackCharacter="?" />

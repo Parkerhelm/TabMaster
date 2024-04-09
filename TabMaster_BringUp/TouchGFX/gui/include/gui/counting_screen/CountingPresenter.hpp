@@ -1,17 +1,17 @@
-#ifndef STARTUP_SCREENPRESENTER_HPP
-#define STARTUP_SCREENPRESENTER_HPP
+#ifndef COUNTINGPRESENTER_HPP
+#define COUNTINGPRESENTER_HPP
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
 
 using namespace touchgfx;
 
-class Startup_ScreenView;
+class CountingView;
 
-class Startup_ScreenPresenter : public touchgfx::Presenter, public ModelListener
+class CountingPresenter : public touchgfx::Presenter, public ModelListener
 {
 public:
-    Startup_ScreenPresenter(Startup_ScreenView& v);
+    CountingPresenter(CountingView& v);
 
     /**
      * The activate function is called automatically when this screen is "switched in"
@@ -25,12 +25,12 @@ public:
      */
     virtual void deactivate();
 
-    virtual ~Startup_ScreenPresenter() {}
+    virtual ~CountingPresenter() {}
 
 private:
-    Startup_ScreenPresenter();
+    CountingPresenter();
 
-    Startup_ScreenView& view;
+    CountingView& view;
 };
 
-#endif // STARTUP_SCREENPRESENTER_HPP
+#endif // COUNTINGPRESENTER_HPP
