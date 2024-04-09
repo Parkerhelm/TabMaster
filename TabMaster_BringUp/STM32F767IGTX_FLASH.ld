@@ -46,7 +46,7 @@ MEMORY
 {
   RAM    (xrw)    : ORIGIN = 0x20000000,   LENGTH = 512K
   FLASH    (rx)    : ORIGIN = 0x8000000,   LENGTH = 1024K
-  QUADSPI (r)    : ORIGIN = 0x90000000,  LENGTH = 4M
+  QUADSPI (r)    : ORIGIN = 0x90000000,  LENGTH = 8M
 }
 
 /* Sections */
@@ -196,7 +196,7 @@ SECTIONS
 		*(FontFlashSection FontFlashSection.*)
 		*(.gnu.linkonce.r.*)
         . = ALIGN(0x4);
-	} >QUADSPI
+	} >FLASH
 
   TextFlashSection :
 	{

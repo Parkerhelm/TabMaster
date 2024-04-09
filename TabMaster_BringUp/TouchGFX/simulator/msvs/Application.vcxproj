@@ -21,12 +21,15 @@
     <ClCompile Include="..\..\generated\gui_generated\src\common\FrontendApplicationBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen1_screen\screen1Presenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen1_screen\screen1View.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen1_screen\screen1ViewBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen2_screen\Screen2Presenter.cpp"/>
-    <ClCompile Include="..\..\gui\src\screen2_screen\Screen2View.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\screen2_screen\Screen2ViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\counting_screen_screen\Counting_ScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\counting_screen_screen\Counting_ScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\counting_screen_screen\Counting_ScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\main_screen_screen\Main_ScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\main_screen_screen\Main_ScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\startup_screen_screen\Startup_ScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\startup_screen_screen\Startup_ScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\startup_screen_screen\Startup_ScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -177,12 +180,15 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\screen1Presenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen1_screen\screen1View.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen1_screen\screen1ViewBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen2_screen\Screen2Presenter.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\screen2_screen\Screen2View.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\screen2_screen\Screen2ViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\counting_screen_screen\Counting_ScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\counting_screen_screen\Counting_ScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\counting_screen_screen\Counting_ScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\main_screen_screen\Main_ScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\main_screen_screen\Main_ScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\startup_screen_screen\Startup_ScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\startup_screen_screen\Startup_ScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\startup_screen_screen\Startup_ScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

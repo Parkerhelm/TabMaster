@@ -12,10 +12,12 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <gui/model/Model.hpp>
 
-#include <gui/screen1_screen/screen1View.hpp>
-#include <gui/screen1_screen/screen1Presenter.hpp>
-#include <gui/screen2_screen/Screen2View.hpp>
-#include <gui/screen2_screen/Screen2Presenter.hpp>
+#include <gui/main_screen_screen/Main_ScreenView.hpp>
+#include <gui/main_screen_screen/Main_ScreenPresenter.hpp>
+#include <gui/counting_screen_screen/Counting_ScreenView.hpp>
+#include <gui/counting_screen_screen/Counting_ScreenPresenter.hpp>
+#include <gui/startup_screen_screen/Startup_ScreenView.hpp>
+#include <gui/startup_screen_screen/Startup_ScreenPresenter.hpp>
 
 
 /**
@@ -38,9 +40,10 @@ public:
      * A list of all view types. Must end with meta::Nil.
      * @note All view types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< screen1View,
-            touchgfx::meta::TypeList< Screen2View,
-            touchgfx::meta::Nil >
+    typedef touchgfx::meta::TypeList< Main_ScreenView,
+            touchgfx::meta::TypeList< Counting_ScreenView,
+            touchgfx::meta::TypeList< Startup_ScreenView,
+            touchgfx::meta::Nil > >
             > GeneratedViewTypes;
 
     /**
@@ -52,9 +55,10 @@ public:
      * A list of all presenter types. Must end with meta::Nil.
      * @note All presenter types used in the application MUST be added to this list!
      */
-    typedef touchgfx::meta::TypeList< screen1Presenter,
-            touchgfx::meta::TypeList< Screen2Presenter,
-            touchgfx::meta::Nil >
+    typedef touchgfx::meta::TypeList< Main_ScreenPresenter,
+            touchgfx::meta::TypeList< Counting_ScreenPresenter,
+            touchgfx::meta::TypeList< Startup_ScreenPresenter,
+            touchgfx::meta::Nil > >
             > GeneratedPresenterTypes;
 
     /**
@@ -77,7 +81,7 @@ public:
 
     virtual void gotoStartScreen(FrontendApplication& app)
     {
-        app.gotoScreen2ScreenNoTransition();
+        app.gotoMain_ScreenScreenNoTransition();
     }
 protected:
     FrontendHeapBase(touchgfx::AbstractPartition& presenters, touchgfx::AbstractPartition& views, touchgfx::AbstractPartition& transitions, FrontendApplication& app)

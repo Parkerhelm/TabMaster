@@ -61,6 +61,13 @@ const osThreadAttr_t touchGFXTask_attributes = {
   .stack_size = 8192 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for TestTask */
+osThreadId_t TestTaskHandle;
+const osThreadAttr_t TestTask_attributes = {
+  .name = "TestTask",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -69,6 +76,7 @@ const osThreadAttr_t touchGFXTask_attributes = {
 
 void StartHardwareTask(void *argument);
 void StarttouchGFXTask(void *argument);
+void StartTestTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -104,6 +112,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of touchGFXTask */
   touchGFXTaskHandle = osThreadNew(StarttouchGFXTask, NULL, &touchGFXTask_attributes);
+
+  /* creation of TestTask */
+  TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -150,6 +161,24 @@ void StarttouchGFXTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END StarttouchGFXTask */
+}
+
+/* USER CODE BEGIN Header_StartTestTask */
+/**
+* @brief Function implementing the TestTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartTestTask */
+void StartTestTask(void *argument)
+{
+  /* USER CODE BEGIN StartTestTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END StartTestTask */
 }
 
 /* Private application code --------------------------------------------------*/

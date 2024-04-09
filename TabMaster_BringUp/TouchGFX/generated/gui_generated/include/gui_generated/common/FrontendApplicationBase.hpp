@@ -17,25 +17,31 @@ public:
 
     virtual void changeToStartScreen()
     {
-        gotoScreen2ScreenNoTransition();
+        gotoMain_ScreenScreenNoTransition();
     }
 
-    // screen1
-    void gotoscreen1ScreenNoTransition();
+    // Main_Screen
+    void gotoMain_ScreenScreenNoTransition();
 
-    // Screen2
-    void gotoScreen2ScreenNoTransition();
+    // Counting_Screen
+    void gotoCounting_ScreenScreenNoTransition();
+
+    // Startup_Screen
+    void gotoStartup_ScreenScreenNoTransition();
 
 protected:
     touchgfx::Callback<FrontendApplicationBase> transitionCallback;
     FrontendHeap& frontendHeap;
     Model& model;
 
-    // screen1
-    void gotoscreen1ScreenNoTransitionImpl();
+    // Main_Screen
+    void gotoMain_ScreenScreenNoTransitionImpl();
 
-    // Screen2
-    void gotoScreen2ScreenNoTransitionImpl();
+    // Counting_Screen
+    void gotoCounting_ScreenScreenNoTransitionImpl();
+
+    // Startup_Screen
+    void gotoStartup_ScreenScreenNoTransitionImpl();
 };
 
 #endif // FRONTENDAPPLICATIONBASE_HPP

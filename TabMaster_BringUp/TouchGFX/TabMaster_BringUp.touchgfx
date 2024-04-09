@@ -2,83 +2,357 @@
   "Application": {
     "Screens": [
       {
-        "Name": "screen1",
+        "Name": "Main_Screen",
         "Components": [
           {
-            "Type": "Box",
-            "Name": "box1",
+            "Type": "Image",
+            "Name": "Background",
             "Width": 800,
             "Height": 480,
-            "Color": {
-              "Red": 103,
-              "Green": 124,
-              "Blue": 230
-            }
+            "RelativeFilename": "__generated\\dark_theme_images_backgrounds_800x480_meteor_rain.png"
           },
           {
             "Type": "Button",
-            "Name": "button1",
-            "X": 280,
-            "Y": 215,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Name": "Start_Button",
+            "X": 8,
+            "Y": 168,
+            "Width": 228,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_action.png",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_action.json"
+          },
+          {
+            "Type": "Button",
+            "Name": "Reset_Button",
+            "X": 564,
+            "Y": 168,
+            "Width": 228,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_action.png",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_action.json"
+          },
+          {
+            "Type": "Button",
+            "Name": "Fifty_Button",
+            "X": 42,
+            "Y": 249,
+            "Width": 243,
+            "Height": 231,
+            "Pressed": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
+            "Released": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_normal.png",
+            "Preset": "glass_theme\\presets\\button\\icon\\rounded\\large_fill_normal.json"
+          },
+          {
+            "Type": "Button",
+            "Name": "Ten_Button",
+            "X": 285,
+            "Y": 249,
+            "Width": 243,
+            "Height": 231,
+            "Pressed": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
+            "Released": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_normal.png",
+            "Preset": "glass_theme\\presets\\button\\icon\\rounded\\large_fill_normal.json"
+          },
+          {
+            "Type": "Button",
+            "Name": "One_Button",
+            "X": 528,
+            "Y": 249,
+            "Width": 243,
+            "Height": 231,
+            "Pressed": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_pressed.png",
+            "Released": "__generated\\glass_theme_images_widgets_button_icon_rounded_large_fill_normal.png",
+            "Preset": "glass_theme\\presets\\button\\icon\\rounded\\large_fill_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Plus_10",
+            "X": 365,
+            "Y": 344,
+            "Width": 83,
+            "Height": 49,
+            "TextId": "__SingleUse_GJOS",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Plus_50",
+            "X": 122,
+            "Y": 344,
+            "Width": 83,
+            "Height": 49,
+            "TextId": "__SingleUse_FYMJ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Plus_1",
+            "X": 620,
+            "Y": 344,
+            "Width": 58,
+            "Height": 49,
+            "TextId": "__SingleUse_CM2Y",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Count",
+            "X": 294,
+            "Y": 175,
+            "Width": 225,
+            "Height": 49,
+            "TextId": "__SingleUse_OVJX",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Start",
+            "X": 72,
+            "Y": 174,
+            "Width": 100,
+            "Height": 49,
+            "TextId": "__SingleUse_P6ZH",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Reset",
+            "X": 622,
+            "Y": 175,
+            "Width": 112,
+            "Height": 49,
+            "TextId": "__SingleUse_E70N",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "Logo",
+            "X": 56,
+            "Y": -30,
+            "Width": 700,
+            "Height": 228,
+            "RelativeFilename": "Logo_700px_wide.png"
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Start_Counting",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button1"
+              "TriggerComponent": "Start_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "Screen2"
+              "ActionComponent": "Counting_Screen"
+            }
+          },
+          {
+            "InteractionName": "Reset_Count",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Reset_Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Startup_Screen"
             }
           }
         ]
       },
       {
-        "Name": "Screen2",
+        "Name": "Counting_Screen",
         "Components": [
           {
-            "Type": "Box",
-            "Name": "box1",
+            "Type": "Image",
+            "Name": "Background",
             "Width": 800,
             "Height": 480,
+            "RelativeFilename": "__generated\\dark_theme_images_backgrounds_800x480_meteor_rain.png"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Current_Count",
+            "X": 329,
+            "Y": 232,
+            "Width": 143,
+            "Height": 47,
+            "TextId": "__SingleUse_4ZXT",
+            "TextRotation": "0",
             "Color": {
-              "Red": 219,
-              "Green": 9,
-              "Blue": 9
-            }
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "Button",
-            "Name": "button2",
-            "X": 280,
-            "Y": 215,
-            "Width": 240,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_medium_rounded_normal.png",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\medium_rounded_normal.json"
+            "Name": "Stop_Counting_Button",
+            "X": 160,
+            "Y": 363,
+            "Width": 480,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_large_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_large_round_action.png",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\large_round_action.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Stop_Counting",
+            "X": 230,
+            "Y": 370,
+            "Width": 341,
+            "Height": 47,
+            "TextId": "__SingleUse_OD8M",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "Image",
+            "Name": "Logo",
+            "X": 50,
+            "Width": 700,
+            "Height": 228,
+            "RelativeFilename": "Logo_700px_wide.png"
+          },
+          {
+            "Type": "BoxProgress",
+            "Name": "boxProgress1",
+            "X": 250,
+            "Y": 292,
+            "Width": 300,
+            "Height": 10,
+            "Color": {
+              "Red": 230,
+              "Blue": 126
+            },
+            "Direction": "Right",
+            "Preset": "dark_theme\\presets\\boxprogress\\normal\\medium_action.json",
+            "FileNameBackground": "__generated\\dark_theme_images_widgets_boxprogress_normal_medium.png",
+            "IndicatorPositionWidth": 300,
+            "IndicatorPositionHeight": 10,
+            "ProgressRangeMax": 100,
+            "ProgressInitialValue": 60
           }
         ],
         "Interactions": [
           {
-            "InteractionName": "Interaction1",
+            "InteractionName": "Stop_Counting",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "button2"
+              "TriggerComponent": "Stop_Counting_Button"
             },
             "Action": {
               "Type": "ActionGotoScreen",
               "ScreenTransitionType": "ScreenTransitionNone",
-              "ActionComponent": "screen1"
+              "ActionComponent": "Main_Screen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "Startup_Screen",
+        "Components": [
+          {
+            "Type": "Image",
+            "Name": "Background",
+            "Width": 800,
+            "Height": 480,
+            "RelativeFilename": "__generated\\dark_theme_images_backgrounds_800x480_meteor_rain.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "Logo",
+            "X": 50,
+            "Y": 82,
+            "Width": 700,
+            "Height": 228,
+            "RelativeFilename": "Logo_700px_wide.png"
+          },
+          {
+            "Type": "Button",
+            "Name": "Touch_to_Continue_Button",
+            "X": 160,
+            "Y": 369,
+            "Width": 480,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_large_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_large_round_action.png",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\large_round_action.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "Touch_to_Continue",
+            "X": 219,
+            "Y": 376,
+            "Width": 362,
+            "Height": 47,
+            "TextId": "__SingleUse_FWUT",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Touch_to_Continue",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "Touch_to_Continue_Button"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "Main_Screen"
             }
           }
         ]
@@ -91,7 +365,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "Screen2",
+    "StartupScreenName": "Main_Screen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
