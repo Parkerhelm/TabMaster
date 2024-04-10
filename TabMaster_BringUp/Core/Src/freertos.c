@@ -35,7 +35,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define max_stepper_speed 13375
+#define stepper_start_speed 267500
+#define acceleration_step 254
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,14 +49,14 @@
 /* USER CODE BEGIN Variables */
 
 volatile uint16_t to_count = 0;
-
+extern TIM_HandleTypeDef htim2;
 
 
 /* USER CODE END Variables */
-/* Definitions for HardwareTask */
-osThreadId_t HardwareTaskHandle;
-const osThreadAttr_t HardwareTask_attributes = {
-  .name = "HardwareTask",
+/* Definitions for count */
+osThreadId_t countHandle;
+const osThreadAttr_t count_attributes = {
+  .name = "count",
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -65,22 +67,14 @@ const osThreadAttr_t touchGFXTask_attributes = {
   .stack_size = 8192 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for TestTask */
-osThreadId_t TestTaskHandle;
-const osThreadAttr_t TestTask_attributes = {
-  .name = "TestTask",
-  .stack_size = 512 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
 
 /* USER CODE END FunctionPrototypes */
 
-void StartHardwareTask(void *argument);
+void start_count(void *argument);
 void StarttouchGFXTask(void *argument);
-void StartTestTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -111,14 +105,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* creation of HardwareTask */
-  HardwareTaskHandle = osThreadNew(StartHardwareTask, NULL, &HardwareTask_attributes);
+  /* creation of count */
+  countHandle = osThreadNew(start_count, NULL, &count_attributes);
 
   /* creation of touchGFXTask */
   touchGFXTaskHandle = osThreadNew(StarttouchGFXTask, NULL, &touchGFXTask_attributes);
-
-  /* creation of TestTask */
-  TestTaskHandle = osThreadNew(StartTestTask, NULL, &TestTask_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -130,22 +121,43 @@ void MX_FREERTOS_Init(void) {
 
 }
 
-/* USER CODE BEGIN Header_StartHardwareTask */
+/* USER CODE BEGIN Header_start_count */
 /**
-  * @brief  Function implementing the HardwareTask thread.
+  * @brief  Function implementing the count thread.
   * @param  argument: Not used
   * @retval None
   */
-/* USER CODE END Header_StartHardwareTask */
-void StartHardwareTask(void *argument)
+/* USER CODE END Header_start_count */
+void start_count(void *argument)
 {
-  /* USER CODE BEGIN StartHardwareTask */
+  /* USER CODE BEGIN start_count */
+
+	vTaskSuspend(NULL); //Suspend itself immediately
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	  uint32_t period = stepper_start_speed; //Initialize Variables
+	  uint32_t duty_cycle = period / 2;
+
+	  __HAL_TIM_SET_AUTORELOAD(&htim2, period);
+	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty_cycle); //Double check period and duty cycle
+
+	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
+
+	  while(period >= max_stepper_speed){        //Acceleration loop
+
+		  __HAL_TIM_SET_AUTORELOAD(&htim2, period);
+		  duty_cycle = period / 2;
+		  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty_cycle);
+		  period -= acceleration_step;
+		  osDelay(1);
+	  }
+
+	  vTaskSuspend(NULL);  //Suspends itself when done
+
   }
-  /* USER CODE END StartHardwareTask */
+  /* USER CODE END start_count */
 }
 
 /* USER CODE BEGIN Header_StarttouchGFXTask */
@@ -165,24 +177,6 @@ void StarttouchGFXTask(void *argument)
     osDelay(1);
   }
   /* USER CODE END StarttouchGFXTask */
-}
-
-/* USER CODE BEGIN Header_StartTestTask */
-/**
-* @brief Function implementing the TestTask thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_StartTestTask */
-void StartTestTask(void *argument)
-{
-  /* USER CODE BEGIN StartTestTask */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END StartTestTask */
 }
 
 /* Private application code --------------------------------------------------*/

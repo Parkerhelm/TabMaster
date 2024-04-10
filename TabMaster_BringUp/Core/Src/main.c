@@ -102,6 +102,7 @@ int main(void)
   MX_DMA2D_Init();
   MX_I2C1_Init();
   MX_TIM5_Init();
+  MX_TIM2_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();

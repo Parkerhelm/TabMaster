@@ -29,6 +29,7 @@ void CountingView::update_max_cnt_vf(){
 
 void CountingView::stop_count_btn_vf(){
 	to_count = 0;
+	reset_btn_callback();
 }
 
 
