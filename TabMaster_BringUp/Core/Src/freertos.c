@@ -37,7 +37,7 @@
 /* USER CODE BEGIN PD */
 #define max_stepper_speed 13375
 #define stepper_start_speed 267500
-#define acceleration_step 254
+#define acceleration_step 254 //Values are calculated based on timer frequency and desired acceleration
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -49,6 +49,7 @@
 /* USER CODE BEGIN Variables */
 
 volatile uint16_t to_count = 0;
+volatile uint16_t curr_count = 0;
 extern TIM_HandleTypeDef htim2;
 
 
@@ -139,9 +140,11 @@ void start_count(void *argument)
   {
 	  uint32_t period = stepper_start_speed; //Initialize Variables
 	  uint32_t duty_cycle = period / 2;
+	  curr_count = 0;
 
 	  __HAL_TIM_SET_AUTORELOAD(&htim2, period);
 	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty_cycle); //Double check period and duty cycle
+	  __NVIC_EnableIRQ(EXTI1_IRQn); //enable the count interrupt
 
 	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
