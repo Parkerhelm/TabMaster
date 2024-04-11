@@ -62,6 +62,10 @@ void Error_Handler(void);
 #define count_sensor__input_Pin GPIO_PIN_1
 #define count_sensor__input_GPIO_Port GPIOC
 #define count_sensor__input_EXTI_IRQn EXTI1_IRQn
+#define stepper_direction_Pin GPIO_PIN_2
+#define stepper_direction_GPIO_Port GPIOC
+#define stepper_enable_Pin GPIO_PIN_3
+#define stepper_enable_GPIO_Port GPIOC
 #define LCD_TOUCH_RST_Pin GPIO_PIN_3
 #define LCD_TOUCH_RST_GPIO_Port GPIOB
 #define LCD_TOUCH_WAKE_Pin GPIO_PIN_4

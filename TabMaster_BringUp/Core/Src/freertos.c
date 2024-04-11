@@ -35,9 +35,9 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define max_stepper_speed 13375
+#define max_stepper_speed 15285
 #define stepper_start_speed 267500
-#define acceleration_step 254 //Values are calculated based on timer frequency and desired acceleration
+#define acceleration_step 252 //Values are calculated based on timer frequency and desired acceleration
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -145,6 +145,8 @@ void start_count(void *argument)
 	  __HAL_TIM_SET_AUTORELOAD(&htim2, period);
 	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty_cycle); //Double check period and duty cycle
 	  __NVIC_EnableIRQ(EXTI1_IRQn); //enable the count interrupt
+
+	  HAL_GPIO_WritePin(GPIOC, stepper_enable_Pin, GPIO_PIN_RESET);
 
 	  HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 

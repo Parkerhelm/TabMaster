@@ -11,6 +11,7 @@
 #include "task.h"
 #include "cmsis_os.h"
 #include "stm32f7xx.h"
+#include "main.h"
 
 extern uint16_t to_count; //to_count holds the number of pull tabs that will be counted
 extern osThreadId_t countHandle;						  //the following functions define what each button does
@@ -36,6 +37,7 @@ void p1_btn_callback(){
 
 void reset_btn_callback(){
 	HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1);
+	HAL_GPIO_WritePin(GPIOC, stepper_enable_Pin, GPIO_PIN_SET);
 	to_count = 0;
 
 }
