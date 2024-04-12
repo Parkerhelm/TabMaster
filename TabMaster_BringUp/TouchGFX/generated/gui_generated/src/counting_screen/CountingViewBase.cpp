@@ -17,7 +17,7 @@ CountingViewBase::CountingViewBase() :
     Background.setBitmap(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_BACKGROUNDS_800X480_METEOR_RAIN_ID));
     add(Background);
 
-    Current_Count.setXY(366, 240);
+    Current_Count.setXY(366, 191);
     Current_Count.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     Current_Count.setLinespacing(0);
     touchgfx::Unicode::snprintf(Current_CountBuffer1, CURRENT_COUNTBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_J04Q).getText());
@@ -43,7 +43,7 @@ CountingViewBase::CountingViewBase() :
     Logo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_700PX_WIDE_ID));
     add(Logo);
 
-    Progress_Box.setXY(250, 292);
+    Progress_Box.setXY(250, 253);
     Progress_Box.setProgressIndicatorPosition(0, 0, 300, 10);
     Progress_Box.setRange(0, 100);
     Progress_Box.setDirection(touchgfx::AbstractDirectionProgress::RIGHT);
@@ -51,6 +51,17 @@ CountingViewBase::CountingViewBase() :
     Progress_Box.setColor(touchgfx::Color::getColorFromRGB(230, 0, 126));
     Progress_Box.setValue(60);
     add(Progress_Box);
+
+    continue_button.setXY(244, 284);
+    continue_button.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_MEDIUM_ROUND_PRESSED_ID));
+    continue_button.setAction(buttonCallback);
+    add(continue_button);
+
+    textArea1.setXY(307, 290);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_01WU));
+    add(textArea1);
 }
 
 CountingViewBase::~CountingViewBase()
@@ -76,6 +87,13 @@ void CountingViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src
         //Call stop_count_btn_vf
         stop_count_btn_vf();
     }
+    if (&src == &continue_button)
+    {
+        //countinue
+        //When continue_button clicked call virtual function
+        //Call continue_btn_vf
+        continue_btn_vf();
+    }
 }
 
 void CountingViewBase::transitionBegins()
@@ -84,4 +102,12 @@ void CountingViewBase::transitionBegins()
     //When screen transition begins call virtual function
     //Call update_max_cnt_vf
     update_max_cnt_vf();
+}
+
+void CountingViewBase::handleTickEvent()
+{
+    //status_bar_update
+    //When every N tick call virtual function
+    //Call update_current_count
+    update_current_count();
 }

@@ -72,7 +72,7 @@
             "X": 365,
             "Y": 344,
             "Width": 83,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_GJOS",
             "TextRotation": "0",
             "Color": {
@@ -88,7 +88,7 @@
             "X": 122,
             "Y": 344,
             "Width": 83,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_FYMJ",
             "TextRotation": "0",
             "Color": {
@@ -104,7 +104,7 @@
             "X": 620,
             "Y": 344,
             "Width": 58,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_CM2Y",
             "TextRotation": "0",
             "Color": {
@@ -120,7 +120,7 @@
             "X": 313,
             "Y": 174,
             "Width": 175,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_OVJX",
             "TextRotation": "0",
             "Color": {
@@ -141,7 +141,7 @@
             "X": 72,
             "Y": 174,
             "Width": 100,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_P6ZH",
             "TextRotation": "0",
             "Color": {
@@ -157,7 +157,7 @@
             "X": 622,
             "Y": 175,
             "Width": 112,
-            "Height": 47,
+            "Height": 49,
             "TextId": "__SingleUse_E70N",
             "TextRotation": "0",
             "Color": {
@@ -261,7 +261,7 @@
             "Type": "TextArea",
             "Name": "Current_Count",
             "X": 366,
-            "Y": 240,
+            "Y": 191,
             "Width": 68,
             "Height": 47,
             "TextId": "__SingleUse_4ZXT",
@@ -322,7 +322,7 @@
             "Type": "BoxProgress",
             "Name": "Progress_Box",
             "X": 250,
-            "Y": 292,
+            "Y": 253,
             "Width": 300,
             "Height": 10,
             "Color": {
@@ -336,6 +336,33 @@
             "IndicatorPositionHeight": 10,
             "ProgressRangeMax": 100,
             "ProgressInitialValue": 60
+          },
+          {
+            "Type": "Button",
+            "Name": "continue_button",
+            "X": 244,
+            "Y": 284,
+            "Width": 312,
+            "Height": 60,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_60_medium_round_normal.png",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_60\\medium_round_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 307,
+            "Y": 290,
+            "Width": 178,
+            "Height": 47,
+            "TextId": "__SingleUse_01WU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
           }
         ],
         "Interactions": [
@@ -370,6 +397,28 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "update_max_cnt_vf"
+            }
+          },
+          {
+            "InteractionName": "status_bar_update",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 1
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "update_current_count"
+            }
+          },
+          {
+            "InteractionName": "countinue",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "continue_button"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "continue_btn_vf"
             }
           }
         ]

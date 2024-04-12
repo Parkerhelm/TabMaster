@@ -50,6 +50,7 @@
 
 volatile uint16_t to_count = 0;
 volatile uint16_t curr_count = 0;
+volatile uint16_t prog_count = 0;
 extern TIM_HandleTypeDef htim2;
 
 
@@ -140,7 +141,7 @@ void start_count(void *argument)
   {
 	  uint32_t period = stepper_start_speed; //Initialize Variables
 	  uint32_t duty_cycle = period / 2;
-	  curr_count = 0;
+
 
 	  __HAL_TIM_SET_AUTORELOAD(&htim2, period);
 	  __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, duty_cycle); //Double check period and duty cycle

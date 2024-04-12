@@ -14,6 +14,8 @@ public:
 
     virtual void update_max_cnt_vf();
     virtual void stop_count_btn_vf();
+    virtual void update_current_count();
+    virtual void continue_btn_vf();
 
 protected:
 };

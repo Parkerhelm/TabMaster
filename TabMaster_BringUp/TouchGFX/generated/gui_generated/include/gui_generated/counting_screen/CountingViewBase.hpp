@@ -21,6 +21,7 @@ public:
     virtual ~CountingViewBase();
     virtual void setupScreen();
     virtual void transitionBegins();
+    virtual void handleTickEvent();
 
     /*
      * Virtual Action Handlers
@@ -30,6 +31,14 @@ public:
         // Override and implement this function in Counting
     }
     virtual void update_max_cnt_vf()
+    {
+        // Override and implement this function in Counting
+    }
+    virtual void update_current_count()
+    {
+        // Override and implement this function in Counting
+    }
+    virtual void continue_btn_vf()
     {
         // Override and implement this function in Counting
     }
@@ -49,6 +58,8 @@ protected:
     touchgfx::TextArea Stop_Counting;
     touchgfx::Image Logo;
     touchgfx::BoxProgress Progress_Box;
+    touchgfx::Button continue_button;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

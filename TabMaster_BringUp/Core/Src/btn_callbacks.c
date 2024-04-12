@@ -18,20 +18,25 @@ extern osThreadId_t countHandle;						  //the following functions define what ea
 extern TIM_HandleTypeDef htim2;
 
 void p50_btn_callback(){
+ if (to_count <= 949){
+	 to_count += 50;
+ }
 
-	to_count += 50;
 
 }
 
 void p10_btn_callback(){
 
-	to_count += 10;
-
+	 if (to_count <= 989){
+		 to_count += 10;
+	 }
 }
 
 void p1_btn_callback(){
 
-	to_count++;
+	 if (to_count <= 998){
+		 to_count++;
+	 }
 
 }
 
@@ -43,10 +48,20 @@ void reset_btn_callback(){
 }
 
 void start_btn_callback(){
-	vTaskResume((TaskHandle_t) countHandle); // resume counting task
+
+	curr_count = 0;
+	prog_count = 0;
+
+	if( to_count != 0){
+		vTaskResume((TaskHandle_t) countHandle); // resume counting task
+	}
+
 }
 
-
+void continue_btn_callback(){
+	curr_count = 0;
+	vTaskResume((TaskHandle_t) countHandle); // resume counting task
+}
 
 
 

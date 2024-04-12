@@ -44,6 +44,7 @@
 /* USER CODE BEGIN PV */
 extern uint16_t curr_count;
 extern uint16_t to_count;
+extern uint16_t prog_count;
 extern TIM_HandleTypeDef htim2;
 /* USER CODE END PV */
 
@@ -172,11 +173,11 @@ void EXTI1_IRQHandler(void)
   /* USER CODE BEGIN EXTI1_IRQn 0 */
 
 	curr_count++;
+	prog_count++;
 
-	if(curr_count == to_count){
+	if((curr_count == 50) || (prog_count == to_count)){
 		HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_1);
 		HAL_GPIO_WritePin(GPIOC, stepper_enable_Pin, GPIO_PIN_SET);
-		to_count = 0;
 		curr_count = 0;
 		HAL_GPIO_EXTI_IRQHandler(count_sensor__input_Pin);
 		__NVIC_DisableIRQ(EXTI1_IRQn);
